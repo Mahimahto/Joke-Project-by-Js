@@ -1,4 +1,4 @@
-let joke = document.querySelector("joke")
+let joke = document.querySelector("#joke")
 let button = document.querySelector("button")
 
 function fetchData(){
@@ -6,7 +6,11 @@ function fetchData(){
     .then((reponse)=>reponse.json())
     .then((data)=>{
         console.log(data);
-        return data
+        if(data.type==="single"){
+           return joke.textContent = data.joke
+        }else{
+           return joke.textContent = data.delivery + data.setup
+        }
     })
 }
 
