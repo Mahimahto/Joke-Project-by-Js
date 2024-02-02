@@ -9,10 +9,13 @@ function fetchData(){
         if(data.type==="single"){
            return joke.textContent = data.joke
         }else{
-           return joke.textContent = data.delivery + data.setup
+           return joke.textContent = data.setup + data.delivery
         }
     })
 }
+window.addEventListener("load",()=>{
+    fetchData()
+})
 
 button.addEventListener("click",()=>{
     fetchData()
